@@ -10,9 +10,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
-    "express-ws": "^3.0.0",
-    "filereader": "^0.10.3",
-    "node-wav": "0.0.2",
-    "waveheader": "0.0.2"
+    "express-ws": "^3.0.0"
   }
 }

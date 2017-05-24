@@ -4,6 +4,7 @@ const express      = require('express');
 const fs           = require('fs');
 const https        = require('https');
 const Mp3Source    = require('./lib/mp3-source');
+const AACSource    = require('./lib/aac-source');
 
 let app          = express();
 let httpsServer  = https.createServer({
@@ -17,6 +18,12 @@ let sources = {
     hostname: 'live.scpr.org',
     protocol: 'https:',
     path: '/kpcclive?ua=SCPRWEB&preskip=true',
+    maxFrames: 7200
+  }),
+  aac: new AACSource({
+    hostname: 'live.scpr.org',
+    protocol: 'https:',
+    path: '/aac?ua=SCPRWEB&preskip=true',
     maxFrames: 7200
   })
 };
