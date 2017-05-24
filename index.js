@@ -29,14 +29,15 @@ let sources = {
 };
 
 app.get('/stream/:type', function (req, res) {
-  res.writeHead(200, {'Content-Type': 'audio/mpeg'});
+  let source = sources[req.params.type];
+  res.writeHead(200, {'Content-Type': source.contentType});
   let offset      = (req.query.offset ? parseInt(req.query.offset) : 0) + 8;
   // ☝️ Because MP3 frames depend on previous frames, it seems like
   // we need about 8 seconds worth of frames for the stream to start playing
   // immediately when a zero offset is provided.  In essence, there's always
   // going to be an 8 second delay for the tradeoff of not having to wait.
   let isConnected = true;
-  sources[req.params.type].read(offset, (samples) => {
+  source.read(offset, (samples) => {
     res.write(Buffer.from(samples), 'binary');
     return isConnected;
   });
