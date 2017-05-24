@@ -19,7 +19,7 @@ Ronald Raygun stores a large buffer of audio data in memory.  It's simply a doub
 
 ## Use
 
-Start the server by running `node index.js`.  This will run an HTTPS server with two endpoints, one for the MP3 stream and one for AAC.
+Start the server by running `node index.js`.  This will run two HTTPS endpoints, one for the MP3 stream and one for AAC.
 
 *MP3*: `https://localhost:3003/stream/mp3`
 
@@ -31,5 +31,5 @@ To rewind `n` number of seconds, say 30, provide an offset query parameter:
 
 `https://localhost:3003/stream/mp3?offset=30`
 
-Currently, the calculation is approximately to the second, but this is not currently accurate but close enough for now.  How many encoded frames make up 1 second of audio depends on the codec being used, the bitrate, and the sample rate.
+Currently, the calculation is approximately to the second, though this is not currently accurate.  It's close enough for now.  How many encoded frames make up 1 second of audio depends on the codec being used, the bitrate, and the sample rate.
 
