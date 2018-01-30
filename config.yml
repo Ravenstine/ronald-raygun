@@ -1,0 +1,16 @@
+streams:
+  mp3-64:
+    format: mp3
+    hostname: live.scpr.org
+    protocol: 'https:'
+    path: /kpcclive?ua=SCPRWEB&preskip=true
+    maxFrames: 7200
+  aac-48:
+    format: aac
+    hostname: live.scpr.org
+    protocol: 'https:'
+    path: /aac?ua=SCPRWEB&preskip=true
+    maxFrames: 7200
+  # hls:
+  #   sources:
+  #     - aac-48

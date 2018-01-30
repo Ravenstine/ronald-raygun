@@ -10,6 +10,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.3",
-    "express-ws": "^3.0.0"
+    "express-ws": "^3.0.0",
+    "js-yaml": "^3.8.4",
+    "mp3-header": "^0.1.1"
   }
 }
